@@ -45,3 +45,5 @@ Disclaimer:
     The Service Menu provided in this guide is intended for personal use and comes with no warranty or guarantee of any kind. Use it at your own risk.
 
 Enjoy using the PDF Merge Service Menu with kdialog in Plasma!
+
+Pascal Billery-Schneider
