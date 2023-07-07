@@ -1,0 +1,27 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=application/pdf;
+TryExec=pdftk
+Actions=mergepdfs_odd_even;
+
+[Desktop Action mergepdfs_odd_even]
+Icon=application-pdf
+Name=Merge PDFs Odd & Even
+Name[fr]=Unir les fichiers PDF en recto verso
+Name[de]=PDFs mit ungeraden & geraden Seiten zusammenführen
+Name[it]=Unisci PDF pagine dispari & pari
+Name[es]=Unir PDFs páginas impares y pares
+Name[pt]=Unir PDFs páginas ímpares e pares
+
+Exec=file_odd=$(kdialog --title "Choose Odd File" --getopenfilename "Choose the file with odd pages" "application/pdf") && file_even=$(kdialog --title "Choose Even File" --getopenfilename "Choose the file with even pages" "application/pdf") && output_file=$(kdialog --title "Merge Odd and Even Pages" --getsavefilename "Choose the output file" "application/pdf") && output_file=${output_file%.pdf}.pdf && pdftk A="$file_odd" B="$file_even" shuffle A Bend-1 output "$output_file" && kdialog --title "Odd/Even" --msgbox "Merge PDFs completed"
+
+Exec[fr]=file_odd=$(kdialog --title "Choix du fichier Recto" --getopenfilename "Choisir le fichier des pages impaires" "application/pdf") && file_even=$(kdialog --title "Choix du fichier Verso" --getopenfilename "Choisir le fichier des pages paires" "application/pdf") && output_file=$(kdialog --title "Unir les pages impaires et paires" --getsavefilename "Choisir le fichier de sauvegarde" "application/pdf") && output_file=${output_file%.pdf}.pdf && pdftk A="$file_odd" B="$file_even" shuffle A Bend-1 output "$output_file" && kdialog --title "Recto/Verso" --msgbox "Fusion des fichiers PDF terminée"
+
+Exec[de]=file_odd=$(kdialog --title "Ungerades Dokument auswählen" --getopenfilename "Dokument mit ungeraden Seiten auswählen" "application/pdf") && file_even=$(kdialog --title "Gerades Dokument auswählen" --getopenfilename "Dokument mit geraden Seiten auswählen" "application/pdf") && output_file=$(kdialog --title "Ungerade und gerade Seiten zusammenführen" --getsavefilename "Ausgabedatei auswählen" "application/pdf") && output_file=${output_file%.pdf}.pdf && pdftk A="$file_odd" B="$file_even" shuffle A Bend-1 output "$output_file" && kdialog --title "Ungerade/Gerade" --msgbox "PDFs zusammenführen abgeschlossen"
+
+Exec[it]=file_odd=$(kdialog --title "Scegli file dispari" --getopenfilename "Scegli il file con pagine dispari" "application/pdf") && file_even=$(kdialog --title "Scegli file pari" --getopenfilename "Scegli il file con pagine pari" "application/pdf") && output_file=$(kdialog --title "Unisci pagine dispari e pari" --getsavefilename "Scegli il file di output" "application/pdf") && output_file=${output_file%.pdf}.pdf && pdftk A="$file_odd" B="$file_even" shuffle A Bend-1 output "$output_file" && kdialog --title "Dispari/Pari" --msgbox "Unione dei PDF completata"
+
+Exec[es]=file_odd=$(kdialog --title "Seleccionar archivo impar" --getopenfilename "Seleccionar el archivo con páginas impares" "application/pdf") && file_even=$(kdialog --title "Seleccionar archivo par" --getopenfilename "Seleccionar el archivo con páginas pares" "application/pdf") && output_file=$(kdialog --title "Combinar páginas impares y pares" --getsavefilename "Seleccionar archivo de salida" "application/pdf") && output_file=${output_file%.pdf}.pdf && pdftk A="$file_odd" B="$file_even" shuffle A Bend-1 output "$output_file" && kdialog --title "Impar/Par" --msgbox "Combinación de PDFs completada"
+
+Exec[pt]=file_odd=$(kdialog --title "Escolher arquivo Ímpar" --getopenfilename "Escolha o arquivo com páginas ímpares" "application/pdf") && file_even=$(kdialog --title "Escolher arquivo Par" --getopenfilename "Escolha o arquivo com páginas pares" "application/pdf") && output_file=$(kdialog --title "Combinar páginas ímpares e pares" --getsavefilename "Escolher o arquivo de saída" "application/pdf") && output_file=${output_file%.pdf}.pdf && pdftk A="$file_odd" B="$file_even" shuffle A Bend-1 output "$output_file" && kdialog --title "Ímpar/Par" --msgbox "Combinação de PDFs concluída"
