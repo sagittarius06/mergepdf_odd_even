@@ -6,7 +6,8 @@ This user guide provides instructions for using a Service Menu, developed with k
 Requirements:
 
     Linux operating system with Plasma desktop environment
-    pdftk
+    Install the Service Menu system-wide: # cp mergepdf_odd_even.desktop /usr/share/kservices5/ServiceMenus/
+    pdftk binary must be installed
     Two PDF files: one containing odd-numbered pages, and the other containing even-numbered pages
     Simplex Automatic Document Feeder (ADF) scanner or printer with ADF
 
